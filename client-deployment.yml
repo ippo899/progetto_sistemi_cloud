@@ -1,0 +1,24 @@
+# Manifest per il Deployment client
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sensore-client
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sensore-client
+  template:
+    metadata:
+      labels:
+        app: sensore-client
+    spec:
+     containers:
+      - name: sensore-client
+        image: progetto-client:latest
+        imagePullPolicy: Never
+        env:
+        - name: SERVER_PORT
+          value: "8081"
+        - name: APP_SERVER
+          value: http://server:8080
