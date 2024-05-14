@@ -1,0 +1,61 @@
+version: "3.8"
+services:
+
+  client:
+
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+     - 8081:8081
+    networks:
+      - dockernet
+    restart: on-failure
+
+    depends_on:
+     - server-docker
+    
+    environment:
+      APP_SERVER: http://server-docker:8080
+  
+
+
+
+  mysqldb:
+    container_name: mysqldb
+    image: mysql:8.0
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sensordb
+      TZ: Europe/Rome
+    restart: always
+    ports:
+      - 3307:3306
+    networks:
+      - dockernet
+ 
+
+    volumes:
+      - dbdata:/var/lib/mysql
+
+  server-docker:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    networks:
+      - dockernet
+    restart: on-failure
+    depends_on:
+      - mysqldb
+    environment:
+      SPRING_DATASOURCE_URL:  jdbc:mysql://mysqldb/sensordb
+      TZ: Europe/Rome
+
+networks:
+  dockernet:    
+volumes:
+  dbdata:

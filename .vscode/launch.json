@@ -1,0 +1,49 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "ClientApplication",
+            "request": "launch",
+            "mainClass": "com.client.ClientApplication",
+            "projectName": "client"
+        },
+        {
+            "type": "java",
+            "name": "ClientApplication",
+            "request": "launch",
+            "mainClass": "com.example.client.ClientApplication",
+            "projectName": "client"
+        },
+        {
+            "type": "java",
+            "name": "SensorApplication",
+            "request": "launch",
+            "mainClass": "SensorApplication",
+            "projectName": "sensor"
+        },
+        {
+            "type": "java",
+            "name": "SensorApplication",
+            "request": "launch",
+            "mainClass": "com.client.sensor.SensorApplication",
+            "projectName": "sensor"
+        },
+        {
+            "type": "java",
+            "name": "SensorsApplication",
+            "request": "launch",
+            "mainClass": "com.project.SensorsApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SensorsApplication<sensors>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.project.SensorsApplication",
+            "projectName": "sensors",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

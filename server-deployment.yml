@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      labels:
+        app: server
+    spec:
+      containers:
+      - name: server
+        image: progetto-server-docker:latest
+        imagePullPolicy: Never
+        env:
+        - name: SERVER_PORT
+          value: "8080" 
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:mysql://mysqldb/sensordb
