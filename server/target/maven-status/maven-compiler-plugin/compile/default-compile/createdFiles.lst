@@ -1,0 +1,6 @@
+com\project\controller\TemperatureController.class
+com\project\services\TemperatureService.class
+com\project\repository\TemperatureRepository.class
+com\project\services\TemperatureServiceImpl.class
+com\project\SensorsApplication.class
+com\project\entity\Temperature.class
