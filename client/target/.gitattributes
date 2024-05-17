@@ -1,0 +1,2 @@
+client-0.0.1-SNAPSHOT.jar filter=lfs diff=lfs merge=lfs -text
+client-0.0.1-SNAPSHOT.jar.original filter=lfs diff=lfs merge=lfs -text
