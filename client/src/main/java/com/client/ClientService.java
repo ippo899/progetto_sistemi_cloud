@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 @Service
-@FeignClient(name = "SensorsApplication", url = "http://localhost:8080")
+@FeignClient(name = "SensorsApplication", url = "http://server-docker:8080")
 public interface ClientService {
     //String hello();
     
