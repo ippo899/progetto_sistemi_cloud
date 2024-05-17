@@ -1,6 +1,3 @@
-com\project\controller\TemperatureController.class
-com\project\services\TemperatureService.class
-com\project\repository\TemperatureRepository.class
-com\project\services\TemperatureServiceImpl.class
-com\project\SensorsApplication.class
-com\project\entity\Temperature.class
+version https://git-lfs.github.com/spec/v1
+oid sha256:2cc949725496d48abf9a94826e524eb05f8fb365b4c7ef2153fc1f35486e3295
+size 278
